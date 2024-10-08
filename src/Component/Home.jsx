@@ -8,7 +8,7 @@ function Home() {
 
   return (
     <>
-      <h1>Le Keyboard Warrior</h1>
+      <h1>Keyboard Warrior</h1>
       <div className="Game-Keyboard-Container">
       <WordGame typedLetter={typedLetter} setTypedLetter={setTypedLetter} isSpecialKey={isSpecialKey} setSpecialKey={setSpecialKey}/>
       <Keyboard typedLetter={typedLetter} isSpecialKey={isSpecialKey}/>

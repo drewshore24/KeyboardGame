@@ -7,19 +7,10 @@
   align-items: center;
   flex-direction: column;
 }
-.TextBox {
-  height: 200px;
-  width: 20em;
-  background-color: #d2e0fb;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  color: black;
-  text-align: center;
-}
+
 
 .Keyboard {
-  max-width: 1008px;
+  max-width: 1000px;
   width: 100%;
   background-color: #e7e7e7;
   overflow: hidden;
@@ -33,19 +24,54 @@
   background-color: #454545;
 }
 
-.keys {
-  width: 60px;
-  height: 60px;
-  background-color: #faf9f6;
+.innerkey{
+  width: 45px;
+  height: 47px;
+  margin-bottom: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4px;
+  background-color: #faf9f6;
+  border: 2px solid rgba(0, 0, 0, 0.295);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.479);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
   transition: 0.2s;
-  border: 2px solid #000;
 }
 
-.keys.active {
+.innerkey.active {
+  animation: activeAnimation 2s forwards; 
+}
+
+.keys {
+  width: 60px;
+  height: 60px;
+  background-color: #e5e2df;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1px;
+  transition: 0.2s;
+  border: 2px solid #000;
+  border-radius: 4px;
+}
+
+.innerkey{
+  width: 45px;
+  height: 47px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #faf9f6;
+  border: 2px solid rgba(0, 0, 0, 0.295);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.479);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.innerkey.active {
   animation: activeAnimation 2s forwards; 
 }
 
@@ -60,171 +86,344 @@
   }
 }
 
+@keyframes yellowkeyAnimation {
+  0% {
+    background-color: #303030; 
+    color: #fff; 
+  }
+  100% {
+    background-color: #fadfa1;
+    color: #000; 
+  }
+}
+
+@keyframes bluekeyAnimation {
+  0% {
+    background-color: #303030; 
+    color: #fff; 
+  }
+  100% {
+    background-color: #7eacb5 ; 
+    color: #000; 
+  }
+}
+
+@keyframes redkeyAnimation {
+  0% {
+    background-color: #303030; 
+    color: #fff; 
+  }
+  100% {
+    background-color: #c96868; 
+    color: #000; 
+  }
+}
+
 .Backspace {
-  width: 185px;
+  width: 195px;
   height: 60px;
-  background-color: #fadfa1;
+  background-color: #e1c78e ;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4px;
+  margin: 1px;
   transition: 0.2s;
   border: 2px solid #000;
+  border-radius: 4px;
 }
-.Backspace.active {
-  animation: activeAnimation 2s forwards; 
+
+.innerbackspace{
+  width: 182px;
+  height: 50px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fadfa1;
+  border: 2px solid rgba(0, 0, 0, 0.295);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.479);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: 0.2s;
 }
+.innerbackspace.active {
+  animation: yellowkeyAnimation 2s forwards; 
+}
+
 
 .Tab {
-  width: 120px;
+  width: 90px;
   height: 60px;
-  background-color: #fadfa1;
+  background-color: #e1c78e;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4px;
+  margin: 1px;
   transition: 0.2s;
   border: 2px solid #000;
+  border-radius: 4px;
 }
 
-.Tab.active {
-  animation: activeAnimation 2s forwards; 
+.innertab{
+  width: 80px;
+  height: 50px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fadfa1;
+  border: 2px solid rgba(0, 0, 0, 0.295);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.479);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.innertab.active {
+  animation: yellowkeyAnimation 2s forwards; 
 }
 
 .Slash {
-  width: 155px;
+  width: 160px;
   height: 60px;
-  background-color: #fadfa1;
+  background-color: #e1c78e ;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4px;
+  margin: 1px;
   transition: 0.2s;
   border: 2px solid #000;
+  border-radius: 4px;
 }
-.Slash.active {
-  animation: activeAnimation 2s forwards; 
+
+.innerslash{
+  width: 150px;
+  height: 50px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fadfa1;
+  border: 2px solid rgba(0, 0, 0, 0.295);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.479);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.innerslash.active {
+  animation: yellowkeyAnimation 2s forwards; 
 }
 
 .Caps_Lock {
-  width: 128px;
+  width: 120px;
   height: 60px;
-  background-color: #fadfa1;
+  background-color: #e1c78e ;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4px;
+  margin: 1px;
   transition: 0.2s;
   border: 2px solid #000;
+  border-radius: 4px;
 }
-.Caps_Lock.active {
-  animation: activeAnimation 2s forwards; 
+
+.innercapslock{
+  width: 110px;
+  height: 50px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fadfa1;
+  border: 2px solid rgba(0, 0, 0, 0.295);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.479);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.innercapslock.active {
+  animation: yellowkeyAnimation 2s forwards; 
 }
 
 .Enter_Key {
-  width: 120px;
+  width: 190px;
   height: 60px;
-  background-color: #fadfa1;
+  background-color: #e1c78e ;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4px;
+  margin: 1px;
   transition: 0.2s;
   border: 2px solid #000;
+  border-radius: 4px;
 }
-.Enter_Key.active {
-  animation: activeAnimation 2s forwards; 
+
+.inner_enter_key{
+  width: 178px;
+  height: 50px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fadfa1;
+  border: 2px solid rgba(0, 0, 0, 0.295);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.479);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.inner_enter_key.active {
+  animation: yellowkeyAnimation 2s forwards; 
 }
 
 .Ctrl {
   width: 120px;
   height: 60px;
-  background-color: #7eacb5;
+  background-color: #668890;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4px;
+  margin: 1px;
   transition: 0.2s;
   border: 2px solid #000;
+  border-radius: 4px;
 }
 
-.Ctrl.active {
-  animation: activeAnimation 2s forwards; 
+.inner_ctrl{
+  width: 85px;
+  height: 50px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7eacb5;
+  border: 2px solid rgba(0, 0, 0, 0.295);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.479);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
+
+.inner_ctrl.active {
+  animation: bluekeyAnimation 2s forwards; 
+}
+
 .Alt {
   width: 120px;
   height: 60px;
+  background-color: #668890;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1px;
+  transition: 0.2s;
+  border: 2px solid #000;
+  border-radius: 4px;
+}
+.inner_alt{
+  width: 85px;
+  height: 50px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #7eacb5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 4px;
-  transition: 0.2s;
-  border: 2px solid #000;
+  border: 2px solid rgba(0, 0, 0, 0.295);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.479);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
-
-.Alt.active {
-  animation: activeAnimation 2s forwards; 
-}
-
-.Backslash {
-  width: 120px;
-  height: 60px;
-  background-color: #faf9f6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 4px;
-  transition: 0.2s;
-  border: 2px solid #000;
-}
-.Backslash.active {
-  animation: activeAnimation 2s forwards; 
+.inner_alt.active {
+  animation: bluekeyAnimation 2s forwards; 
 }
 
 .Shift_Left {
-  width: 124px;
+  width: 160px;
   height: 60px;
-  background-color: #7eacb5;
+  background-color: #668890;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4px;
+  margin: 1px;
   transition: 0.2s;
   border: 2px solid #000;
+  border-radius: 4px;
 }
-.Shift_Left.active {
-  animation: activeAnimation 2s forwards; 
+
+.inner_shift_left{
+  width: 145px;
+  height: 50px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7eacb5;
+  border: 2px solid rgba(0, 0, 0, 0.295);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.479);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.inner_shift_left.active {
+  animation: bluekeyAnimation 2s forwards; 
 }
 
 .Shift_Right {
   width: 187px;
   height: 60px;
-  background-color: #7eacb5;
+  background-color: #668890;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4px;
+  margin: 1px;
   transition: 0.2s;
   border: 2px solid #000;
+  border-radius: 4px;
 }
 
-.Shift_Right.active {
-  animation: activeAnimation 2s forwards; 
+.inner_shift_right{
+  width: 172px;
+  height: 50px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7eacb5;
+  border: 2px solid rgba(0, 0, 0, 0.295);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.479);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.inner_shift_right.active {
+  animation: bluekeyAnimation 2s forwards; 
 }
 
 .Space_Key {
   max-width: 600px;
   width: 100%;
   height: 60px;
-  background-color: #c96868;
+  background-color: #b25e5e;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 4px;
+  margin: 1px;
   transition: 0.2s;
   border: 2px solid #000;
+  border-radius: 4px;
+} 
+.inner_space_key{
+  max-width: 590px;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c96868;
+  border: 2px solid rgba(0, 0, 0, 0.295);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.479);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
-.Space_Key.active {
-  animation: activeAnimation 2s forwards; 
+.inner_space_key.active {
+  animation: redkeyAnimation 2s forwards; 
 }

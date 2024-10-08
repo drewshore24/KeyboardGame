@@ -115,6 +115,7 @@ const WordGame = ({ typedLetter, setTypedLetter, setSpecialKey }) => {
   // handles refresh button and returns all state to default
   function refresh() {
     setTypedLetter(null);
+    setSpecialKey(null)
     setStrArr([]);
     setTimer(30);
     setTimerStarted(false);
