@@ -1,21 +1,10 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import "../css/WordGame.css";
-
-import { UserContext } from "../context/AuthContext";
-import {
-  getAverage,
-  highScoreCalc,
-  noOfGames,
-  updateLastTen,
-} from "../utils/otherUtils";
-import { db } from "../firebase/fire";
-import { doc, updateDoc } from "firebase/firestore";
 const defaultText =
   "As the sun dipped below the horizon, the sky transformed into a canvas of vibrant oranges and deep purples, casting a warm glow over the quiet town. The evening breeze carried the sweet scent of blooming jasmine, mingling with the distant sounds of laughter and music from a nearby festival. Streetlights flickered to life, illuminating the cobblestone streets where families strolled leisurely, savoring the moment. In this tranquil setting, time seemed to slow, allowing the beauty of the world to unfold in every detail.";
 
 const WordGame = ({ typedLetter, setTypedLetter, setSpecialKey }) => {
   // useStates
-  const { user, stats } = useContext(UserContext);
   const inputRef = useRef(null);
   const [strArray, setStrArr] = useState([]);
   const [timer, setTimer] = useState(30);
@@ -136,51 +125,6 @@ const WordGame = ({ typedLetter, setTypedLetter, setSpecialKey }) => {
     setGameStarted(false);
     setIsTime0(false);
   }
-
-  // sets the data for the database (backend)
-  const userData = {
-    gamesPlayed: 0,
-    highScore: 0,
-    lastTenWpm: [],
-    lastTenAccuracy: [],
-    averageWpm: 0,
-    averageAccuracy: 0,
-    accuracy: 0,
-    wpm: 0,
-    cpm: 0,
-  };
-
-  // calls functions to calculate backend data and sends the data.
-  useEffect(() => {
-    const id = user?.uid;
-    if (user && isTime0) {
-      const lastTen_wpm = updateLastTen(stats?.lastTenWpm, wpm);
-      const lastTen_accuracy = updateLastTen(stats?.lastTenAccuracy, accuracy);
-      const avg_wpm = getAverage(stats?.lastTenWpm);
-      const avg_accuracy = getAverage(stats?.lastTenAccuracy);
-      const high_score = highScoreCalc(wpm, stats?.highScore);
-      const games = noOfGames(stats?.gamesPlayed);
-
-      userData.gamesPlayed = games;
-      userData.highScore = high_score;
-      userData.lastTenWpm = lastTen_wpm;
-      userData.lastTenAccuracy = lastTen_accuracy;
-      userData.averageWpm = avg_wpm;
-      userData.averageAccuracy = avg_accuracy;
-      userData.accuracy = Number(accuracy).toFixed(2);
-      userData.wpm = wpm;
-      userData.cpm = cpm;
-    }
-    if (user && wpm > 0) {
-      const docRef = doc(db, "gameStats", id);
-      updateDoc(docRef, {
-        id,
-        ...userData,
-      }).then(() => {
-        console.log("data");
-      });
-    }
-  }, [wpm]);
 
     function ParagraphGen(selection){
     const difficulty = selection.target.value
