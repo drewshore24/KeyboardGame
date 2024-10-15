@@ -5,6 +5,11 @@
 * {
   background-color: #d2e0fb;
 }
+
+header{
+  background-color: black;
+  border: 1px solid black;
+}
 h1 {
   color: #FAF9F6;
   text-align: center;
@@ -35,9 +40,3 @@ nav {
   justify-content: right;
 }
 
-.Game-Keyboard-Container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}

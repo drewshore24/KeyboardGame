@@ -12,13 +12,13 @@
     color: #B0B0B0;
     border: 1px solid black;
     width: 70%;
-    height: auto; /* Change from fixed height to auto */
-    max-height: 300px; /* Optional: Set a max height to limit expansion */
-    overflow: hidden; /* Prevent overflow if content exceeds max height */
+    height: auto; 
+    max-height: 300px;
+    overflow: hidden; 
     padding: 4px;
-    display: flex; /* Use flexbox for child alignment */
-    flex-direction: column; /* Arrange child elements vertically */
-    flex-wrap: wrap; /* Allow wrapping of child elements */
+    display: flex; 
+    flex-direction: column; 
+    flex-wrap: wrap; 
 }
 
 .input-field{

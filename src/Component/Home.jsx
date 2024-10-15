@@ -1,6 +1,7 @@
 import {useState } from "react";
 import Keyboard from "./Keyboard";
 import WordGame from "./WordGame";
+import "../css/Home.css";
 
 function Home() {
   const [typedLetter, setTypedLetter] = useState(null)
